@@ -1,0 +1,16 @@
+@startuml
+
+class ClaseCodigoProducto {
+    -productos : ArrayList<String>
+    -contadorArticulos : int
+    +GeneraCodigo(descripcionProducto : String, categoria : String) : String
+}
+
+class GestionProductos {
+    {static} main(args : String[]) : void
+}
+
+GestionProductos ..> ClaseCodigoProducto
+
+}
+@enduml
