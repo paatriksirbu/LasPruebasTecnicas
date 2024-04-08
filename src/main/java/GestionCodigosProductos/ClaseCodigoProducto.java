@@ -13,7 +13,10 @@ public class ClaseCodigoProducto {
             throw new IllegalArgumentException("La descripción del producto y la categoría no pueden estar vacías");
         }
 
-        String codigo = descripcionProducto.trim().charAt(0) + "-" + categoria.toUpperCase().charAt(0) + "-" + contadorArticulos;
+        String codigoArticulo = String.format("%03d", contadorArticulos);
+        String codigo = descripcionProducto.trim().substring(0,2).toUpperCase() + "-" + categoria.trim().substring(0,2).toUpperCase() + "-" + codigoArticulo;
+        contadorArticulos++;
+
         return codigo;
     }
 }
